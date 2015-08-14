@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web storage</title>
+<script type="text/javascript" src="js/l208.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        function saveSessionStorage(id){
+        var target = document.getElementById(id);
+        var str = target.value;
+        sessionStorage.setItem("message",str);
+    }
+    function loadSessionStorage(id){
+        var target =document.getElementById(id);
+        var msg = sessionStorage.getItem("message");
+        target.innerHTML = msg;
+    }
+    }
+</script>
+</head>
+<body>
+    <p id="msg"></p>
+    <input type="text" id="input" >
+    <input type="button"  value="保存数据" onclick="saveLocalStorage('input')">
+    <input type="button" value="读取数据" onclick="loadLocalStorage('msg')">
+    
+
+</body>
+</html>
