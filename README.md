@@ -7,6 +7,7 @@
   * localStorage
   
 实现：a.web留言本 b. 作为数据库使用
+
   2 本地数据库功能
   
   * SqlLite
