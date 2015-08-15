@@ -2,6 +2,7 @@
 日常联系相关
 
 * webStorage 
+
   1 HTML5在客户端保存数据的webstorage功能，具体分两种：
   * sessionStorage
   * localStorage
@@ -10,5 +11,5 @@
 
   2 本地数据库功能
   
-  * SqlLite
+  * SqlLite数据库web留言本
   * indexDB
