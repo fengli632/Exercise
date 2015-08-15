@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>indexedDB数据库-创建仓库</title>
+    <script type="text/javascript">
+         window.indexedDB=window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
+
+        window.IDBTransaction= window.IDBTransaction || window.webkitIDBTransaction ||  window.msIDBTransaction;
+
+        window.IDBKeyrange=window.IDBKeyrange || window.webkitIDBKeyrange ||window.msIDBKeyrange;
+
+        window.IDBCursor=  window.IDBCursor ||  window.webkitIDBCursor ||  window.msIDBCursor;
+
+        function CreateObjectStore(){
+            var dbName = "indexDB3";
+            var dbVersion = 3;
+            var idb;
+            var dbConnect = indexedDB.open(dbName,dbVersion);
+            dbConnect.onsuccess = function(e){
+                idb = e.target.result;
+                alert("数据库链接成功");
+            }
+
+            dbConnect.onerror = function(){
+                alert("数据库链接失败");
+            }
+
+            dbConnect.onupgradeneeded=function(e) {
+
+                idb = e.target.result;
+
+                var name = "仓库名";
+
+                var optionalParameters = {
+
+                    keyPath: "indexDB3",
+
+                    autoIncrement: false
+
+            };
+
+                var store=idb.createObjectStore(name,optionalParameters);
+
+                alert("对象仓库创建成功");
+
+         }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="创建数据库仓库" onclick="CreateObjectStore()">
+</body>
+</html>
