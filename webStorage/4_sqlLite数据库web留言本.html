@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sqlLite本地数据库-web留言本</title>
+    <script  src="js/j4.js"></script>
+</head>
+<body onload="init()">
+    <table>
+        <tr>
+            <td>name：</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>memo：</td>
+            <td><input type="text" id="memo"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" value="save" onclick="saveData()"></td>
+        </tr>
+    </table>
+    <hr>
+    <table id="datatable" border="1">
+    </table>
+        <p id="msg"></p>
+</body>
+</html>
