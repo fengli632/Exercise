@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>数组类型是否相似判断</title>
+    
+</head>
+<body>
+    <script type="text/javascript">   
+        /*
+         * param1 Array 
+         * param2 Array
+         * return true or false
+         */
+        function arraysSimilar(arr1, arr2){
+           if(arr1.length == arr2.length){
+                /*for(int i=0;i<arr1.length;i++){
+                    if(Object.prototype.toString.apply(arr1[i]) != Object.prototype.toString.apply(arr2[i])){
+                        return false;
+                    }
+                }*/
+                alert(arr1.length);
+                return true;
+            }else {
+                return false;
+            }
+            
+        
+        }
+    </script>
+    <script src="testData.js"></script>
+</body>
+</html>
