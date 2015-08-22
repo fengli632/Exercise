@@ -1,33 +1,43 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>数组类型是否相似判断</title>
-    
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>数组类型是否相似判断</title>
+	
 </head>
 <body>
-    <script type="text/javascript">   
-        /*
-         * param1 Array 
-         * param2 Array
-         * return true or false
-         */
-        function arraysSimilar(arr1, arr2){
-           if(arr1.length == arr2.length){
-                /*for(int i=0;i<arr1.length;i++){
-                    if(Object.prototype.toString.apply(arr1[i]) != Object.prototype.toString.apply(arr2[i])){
-                        return false;
-                    }
-                }*/
-                alert(arr1.length);
-                return true;
-            }else {
-                return false;
-            }
-            
-        
-        }
-    </script>
-    <script src="testData.js"></script>
+	<script type="text/javascript">   
+		/*
+		 * param1 Array 
+		 * param2 Array
+		 * return true or false
+		 */
+		function arraysSimilar(arr1, arr2){
+		   //先判断是不是数组以及长度是否相同
+		   if(!(arr1 instanceof Array) || !(arr2 instanceof Array) || (arr1.length != arr2.length)){
+				return false;
+		   }
+
+		   //判断两个数组元素类型及类型个数是否相等
+		   //区分:String, Boolean, Number, undefined, null, 函数，日期, window
+		   var count1 = {},
+		   		count2 = {};
+		   for(var i=0;i<arr1.length;i++){
+		   		if typeOf(arr1[i]) === Array; count1.
+		   }
+
+		   function typeOf(arr){
+		   		var n;
+		   		if(arr instanceof Array) n = "Array";
+		   		else if(arr === null) n = "null";
+		   		else if(arr === window) n = "window";
+		   		else if(arr instanceof Date) n = "date";
+		   		else n = typeof arr;
+		   		return n;
+		   }
+
+		}
+	</script>
+	<script src="testData.js"></script>
 </body>
 </html>
