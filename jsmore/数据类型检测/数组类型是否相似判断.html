@@ -20,21 +20,66 @@
 
 		   //判断两个数组元素类型及类型个数是否相等
 		   //区分:String, Boolean, Number, undefined, null, 函数，日期, window
-		   var count1 = {},
-		   		count2 = {};
-		   for(var i=0;i<arr1.length;i++){
-		   		if typeOf(arr1[i]) === Array; count1.
+		   var len = arr1.length;
+		   var count1 = [],
+		   		count2 = [];
+	   		for(var x=0 ;x<9; x++){
+	   			count1[x] = 0;
+	   			count2[x] = 0;
+	   		}
+	   		//判断arr1中不同类型个数
+		   for(var i=0;i<len;i++){
+		   		if (typeOf(arr1[i]) === "string")  count1[0] ++;
+		   		else if(typeOf(arr1[i]) === "boolean") 	count1[1] ++;
+		   		else if(typeOf(arr1[i]) === "number") 	count1[2] ++;
+		   		else if(typeOf(arr1[i]) === "undefined") 	count1[3] ++;
+		   		else if(typeOf(arr1[i]) === "null") 	count1[4] ++;
+		   		else if(typeOf(arr1[i]) === "function") 	count1[5] ++;
+		   		else if(typeOf(arr1[i]) === "date") 	count1[6] ++;
+		   		else if(typeOf(arr1[i]) === "window") 	count1[7] ++;
+		   		else if(typeOf(arr1[i]) === "object") 	count1[8] ++;
+		   }
+		   //判断arr2中不同类型个数
+		   for(var i=0;i<len;i++){
+		   		if (typeOf(arr2[i]) === "string")  count2[0] ++;
+		   		else if(typeOf(arr2[i]) === "boolean") 	count2[1] ++;
+		   		else if(typeOf(arr2[i]) === "number") 	count2[2] ++;
+		   		else if(typeOf(arr2[i]) === "undefined") 	count2[3] ++;
+		   		else if(typeOf(arr2[i]) === "null") 	count2[4] ++;
+		   		else if(typeOf(arr2[i]) === "function") 	count2[5] ++;
+		   		else if(typeOf(arr2[i]) === "date") 	count2[6] ++;
+		   		else if(typeOf(arr2[i]) === "window") 	count2[7] ++;
+		   		else if(typeOf(arr2[i]) === "object") 	count2[8] ++;
 		   }
 
+		   console.log(arr1);
+		   console.log(arr2);
+		   console.log("str-bool-num-undef-null-fun-date-window-object");
+		   console.log(count1.join("----"));
+		   console.log(count2.join("----"));
+
+		   console.log(count1.toString() == count2.toString());
+		   
+	   		if(count1.toString() != count2.toString()){
+	   			return false;
+	   		}
+	   		return true;
+		   
+
+		   //判断数组arr类型个数并放在存储数组count中
+		   //统一检测类型方法
 		   function typeOf(arr){
 		   		var n;
-		   		if(arr instanceof Array) n = "Array";
+		   		if(arr instanceof Array) n = "array";
 		   		else if(arr === null) n = "null";
 		   		else if(arr === window) n = "window";
 		   		else if(arr instanceof Date) n = "date";
-		   		else n = typeof arr;
+		   		else n = typeof(arr);
 		   		return n;
 		   }
+
+
+
 
 		}
 	</script>
