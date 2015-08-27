@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组排序</title>
+<script type="text/javascript">
+    var arr = [12,123,23,2,3,6,23,65,38];
+    alert(arr.sort());  //12,123,2,23,23,3,38,6,65 sort()方法会调用每个数组项的toString()方法,比较的是字符串.
+    arr.sort(function(a,b){ //sort()方法接受一个比较函数作为参数
+        return a-b;
+    });
+    alert(arr); //2,3,6,12,23,23,38,65,123
+</script>
+</head>
+<body>
+    
+</body>
+</html>
