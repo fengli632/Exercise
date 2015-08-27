@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json格式字段排序</title>
+<script type="text/javascript">
+    var persons = [{name:"jack",age:23,sex:"boy"},
+                   {name:"tom",age:20,sex:"boy"},
+                   {name:"lucy",age:16,sex:"girl"}];
+    //按age进行升序排序
+    persons.sort(function(a,b){
+        return a.age-b.age;
+    });
+    console.log(persons);
+</script>
+</head>
+<body>
+    
+</body>
+</html>
