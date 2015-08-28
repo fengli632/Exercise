@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按对象数组的对象属性排序</title>
+<script type="text/javascript">
+    var data = [{name: "jack",age: 22},{name: "wmy",age: 16},{name: "tom",age:22}];
+
+    data.sort(sortByPropertyName("name"));  //按name属性排序
+    alert(data[0].name + "-"+ data[1].name+ "-"+ data[2].name);
+
+    data.sort(by("age",by('name')));   //按age属性排序
+    alert(data[0].age + "-"+ data[1].age+ "-"+ data[2].age);
+
+
+    //sortByPropertyName函数接受一个成员名字字符串作为参数
+    //并返回一个可以用来包含该成员的对象数组进行排序的比较函数
+    function sortByPropertyName(propertyName){
+        return function(o1,o2){
+            var a,b;
+            if(typeof o1 === "object" && typeof o2 === "object" && o1 &&o2){
+                a = o1[propertyName];
+                b = o2[propertyName];
+                if(a === b){
+                    return 0;
+                }
+                if(typeof a === typeof b){
+                    return a < b ? -1 : 1;
+                }
+                return typeof a < typeof b ? -1 : 1;    
+            }
+            else{
+                throw("error");
+            }
+        }
+    }
+
+    //按多个属性排序,比如先按age排序,若age相同,再按name排序
+    function by(propertyName, minor){
+        return function(o1,o2){
+            var a, b;
+            if(typeof o1 === "object" && typeof o2 === "object" && o1 && o2){
+                a = o1[propertyName];
+                b = o2[propertyName]
+            
+                if(a === b){
+                    return typeof minor === 'function' ? minor(o1,o2) : 0;
+                }
+                if(typeof a === typeof b){
+                    return a < b ? -1 : 1;
+                }
+                return typeof a < typeof b ? -1 : 1;
+            }else{
+                throw("error");
+                }
+        }
+        
+    }
+
+    //
+</script>
+</head>
+<body>
+    
+</body>
+</html>
