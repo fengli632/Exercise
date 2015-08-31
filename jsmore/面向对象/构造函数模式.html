@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数模式</title>
+<script type="text/javascript">
+    function Person(name, age, sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.sayName = function(){
+            alert(this.name);
+        };
+    }
+
+    var person1 = new Person("tom",23,"boy");
+    var person2 = new Person("lucy",26,"girl");
+
+    alert("person1--姓名："+person1.name+"；年龄："+person1.age+"：性别："+person1.sex);
+    alert("person2--姓名："+person2.name+"；年龄："+person2.age+"：性别："+person2.sex);
+    
+</script>
+</head>
+<body>
+    
+</body>
+</html>
