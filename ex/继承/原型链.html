@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+<script type="text/javascript">
+    function SuperType(){
+        this.property = true;
+    }
+
+    SuperType.prototype.getSuperValue = function(){
+        return this.property;
+    }
+
+    function SubType(){
+        this.subproperty = false;
+    }
+
+    //继承SuperType
+    SuperType.prototype = new SuperType();
+
+    SubType.prototype.getSubValue = function(){
+        return this.subproperty;
+    };
+
+    var instance = new SubType();
+    console.console.log(instance.getSuperValue());  //true
+</script>
+</head>
+<body>
+    
+</body>
+</html>
