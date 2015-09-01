@@ -18,7 +18,7 @@
 
     //继承SuperType
     SuperType.prototype = new SuperType();
-
+    //不可以用对象字面量的方式创建原型方法，这样会重写原型链
     SubType.prototype.getSubValue = function(){
         return this.subproperty;
     };

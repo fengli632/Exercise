@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承-借用构造函数</title>
+<script type="text/javascript">
+    function SuperType(){
+        this.colors = ["red","blue","black"];
+    }
+
+    function SubType(){
+        SuperType.call(this);
+    }
+
+    var instance1 = new SubType();
+    instance1.colors.push("green");
+    console.log(instance1.colors);  //["red","blue","black","green"]
+
+    var instance1 = new SubType();
+    console.log(instance1.colors);  //["red","blue","black"]
+</script>
+</head>
+<body>
+    
+</body>
+</html>
