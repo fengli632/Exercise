@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链继承</title>
+<script type="text/javascript">
+    function SuperType(){
+        this.property = true;
+    }
+
+    SuperType.prototype.getSuperValue = function(){
+        return this.property;
+    };
+
+    function SubType(){
+        this.subproperty = false;
+    }
+
+    SubType.prototype = new SuperType();
+
+    SubType.prototype.getSubType = function(){
+        return this.subproperty;
+    };
+
+    
+</script>
+</head>
+<body>
+    
+</body>
+</html>
