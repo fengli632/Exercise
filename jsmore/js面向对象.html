@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Literal Notation</title>
+<script type="text/javascript">
+    var animal = {
+        name: "dog",
+        sound: function(noise){
+            console.log(noise);
+        }
+    };
+    animal.sound("wangwang");
+
+    animal.sayName = function(){
+        console.log('hello'+ this.name);
+    };
+    animal.sayName();
+</script>
+</head>
+<body>
+    
+</body>
+</html>
