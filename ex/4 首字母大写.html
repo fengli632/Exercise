@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首字母大写</title>
+<script type="text/javascript">
+    //方法1：转换为数组，截取数组第一个元素变为大写，在存进字符串
+    function firstToUpper1(str){
+        var strLower = str.toLowerCase();//全部转换为小写
+        var arr = strLower.split(' ');
+        var result = '';
+        for(var i=0;i<arr.length; i++){
+            result += arr[i].substring(0,1).toUpperCase() + arr[i].substring(1) + ' ';
+        }
+        return result;
+    }
+
+    //使用正则表达式，简短快捷
+    function firstToUpper2(str){
+        strLower = str.toLowerCase();
+        // \b：边界 \w:字符集合 \s：单个空格
+        return strLower.replace(/\b(\w)|\s(\w)/g,function(m){
+            return m.toUpperCase();
+        });
+    }
+
+    var str = "tom lUcy shelDON toNy";
+    console.log(firstToUpper1(str));    //Tom Lucy Sheldon Tony  
+    console.log(firstToUpper2(str));    //Tom Lucy Sheldon Tony  
+</script>
+</head>
+<body>
+    
+</body>
+</html>
