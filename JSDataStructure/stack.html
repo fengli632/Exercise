@@ -33,6 +33,29 @@
     function length() { 
        return this.top; 
     }
+
+    //测试stack类的实现
+    var s = new Stack();
+    s.push('A1');
+    s.push('B2');
+    s.push('C3');
+
+    console.log('入栈元素：A1 B2 C3');
+
+    console.log('栈内元素个数:' + s.length());
+
+    console.log('栈顶元素:' + s.peek());
+
+    console.log('删除栈顶元素：' + s.pop());
+
+    console.log('删除后栈顶元素：' + s.peek());
+
+    s.clear();
+    console.log("清空后栈长度："+s.length());
+
+    s.push('D4');
+    console.log('添加d4后栈顶元素：' + s.peek());
+    console.log('栈长度：' + s.length());
 </script>
 </head>
 <body>
